@@ -13,5 +13,4 @@ router.get('/cadastro', function(req, res, next) {
 });
 
 
-
 module.exports = router;

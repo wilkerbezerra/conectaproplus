@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Início | CONECTAPRO+</title>
+<!-- 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    /> -->
+
+    <link rel="stylesheet" href="stylesheets/portal/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <div class="header-left">
+          <i class="fas fa-bars menu-icon"></i>
+          <div class="logo">CONECTAPRO<span class="plus">+</span></div>
+        </div>
+
+        <!-- <nav class="main-nav">
+          <a href="#" class="nav-link active">Início</a>
+          <a href="#">Cursos</a>
+        </nav> -->
+
+        <div class="header-right">
+          <i
+            class="fas fa-user-circle profile-icon"
+            onclick="toggleLogoutMenu()"
+            style="font-size: 2.5rem"
+          ></i>
+          <div id="logout-menu">Deslogar</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="highlight-section">
+        <h2>Nossos Cursos</h2>
+
+        <div class="cards-container courses">
+          <a href="../cursos/informatica/aula/01/index.html">
+            <div
+              class="course-card"
+              style="
+                background-image: url('../cursos/informatica/img/christin-hume-mfB1B1s4sMc-unsplash.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
+              <div class="card-footer course-footer">Informática Básica</div>
+            </div>
+          </a>
+
+          <a href="../cursos/geladinho-gourmet/aula/01/index.html">
+            <div
+              class="course-card"
+              style="
+                background-image: url('../cursos/geladinho-gourmet/img/geladinho.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
+              <div class="card-footer course-footer">Geladinho</div>
+            </div>
+          </a>
+
+          <a href="../cursos/espetinho/aula/01/index.html">
+            <div
+              class="course-card"
+              style="
+                background-image: url('../cursos/espetinho/img/espetinho.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
+              <div class="card-footer course-footer">Espetinho</div>
+            </div>
+          </a>
+
+          <a href="../cursos/comunicacao-e-oratoria/aula/01/index.html">
+            <div
+              class="course-card"
+              style="
+                background-image: url('../cursos/comunicacao-e-oratoria/img/comunicacao-e-oratoria.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
+              <div class="card-footer course-footer">
+                Comunicação e Oratória
+              </div>
+            </div>
+          </a>
+
+          <a href="../cursos/saladeiro-profissional/aula/01/index.html">
+            <div
+              class="course-card"
+              style="
+                background-image: url('../cursos/saladeiro-profissional/img/salada.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
+              <div class="card-footer course-footer">
+                Saladeiro Profissional
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- <section class="highlight-section">
+        <h2>Vagas em destaque</h2>
+
+        <div class="cards-container jobs">
+          <div class="job-card">
+            <i class="fas fa-headset job-icon"></i>
+            <p class="job-title">Atendimento (suporte ao cliente)</p>
+            <p class="job-location">Fotaleza - CE</p>
+          </div>
+
+          <div class="job-card">
+            <i class="fas fa-globe job-icon"></i>
+            <p class="job-title">Instrutor de inglês</p>
+            <p class="job-location">Fotaleza - CE</p>
+          </div>
+
+          <div class="job-card">
+            <i class="fas fa-hard-hat job-icon"></i>
+            <p class="job-title">Operador de máquinas</p>
+            <p class="job-location">Eusébio - CE</p>
+          </div>
+
+          <div class="job-card">
+            <i class="fas fa-user-tie job-icon"></i>
+            <p class="job-title">Assistente administrativo</p>
+            <p class="job-location">Pacatuba - CE</p>
+          </div>
+        </div>
+      </section> -->
+    </main>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="logo">CONECTAPRO<span class="plus">+</span></div>
+        <p class="footer-bottom">
+          &copy; 2026 CONECTAPRO+. Capacitando talentos.
+        </p>
+      </div>
+    </footer>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script type="module" src="../../firebase/verificaSeEstaLogado.js"></script> -->
+  </body>
+</html>

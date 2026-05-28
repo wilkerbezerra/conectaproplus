@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/portal', function(req, res, next) {
+  // res.render('index', { title: 'Express' });
+  res.render('index.html');
+});
+
+
 module.exports = router;
