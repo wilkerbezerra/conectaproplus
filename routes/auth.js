@@ -12,5 +12,9 @@ router.get('/cadastro', function(req, res, next) {
   res.render('auth/cadastro');
 });
 
+router.get('/portal', function(req, res, next) {
+  // res.render('index', { title: 'Express' });
+  res.render('index');
+});
 
 module.exports = router;

@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #1a1f71;
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00d2ff;
+}
+
+.header-center {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.header-center a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.header-center span {
+  opacity: 0.5;
+}
+
+.header-right .user-avatar {
+  background-color: #ccc;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 20px;
+}
+
+.main-container {
+  display: flex;
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+.content-area {
+  flex: 1;
+  padding: 30px 50px;
+  overflow-y: auto;
+}
+
+h1.course-title {
+  color: #1a1f71;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-player iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.lesson-info {
+  margin-top: 10px;
+}
+
+.lesson-title {
+  color: #1a1f71;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.completion-checklist {
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-left: 5px solid #009cb4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #009cb4;
+}
+
+.checkbox-label {
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.status-msg {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #009cb4;
+  color: white;
+  overflow-y: auto;
+}
+
+.module-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.module-item:hover {
+  background-color: #008ba3;
+}
+
+.module-item span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.module-item i {
+  font-size: 0.8rem;
+}
+
+a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+#logout-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.main-footer {
+  background-color: #1a1f71;
+  color: white;
+  padding: 12px 0;
+  width: 100%;
+  margin-top: 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content .logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-content .logo span {
+  color: #00d2ff;
+}
+
+.footer-bottom {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 0;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  body {
+    height: auto;
+  }
+
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content-area {
+    padding: 20px 15px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0 10px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  h1.course-title {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .module-item {
+    padding: 12px 15px;
+  }
+}
