@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - CONECTAPRO+</title>
+    <link rel="stylesheet" href="/stylesheets/cadastro/style.css" />
+  </head>
+  <body>
+    <div class="logo">
+       <img src="/images/logo.png" alt="logo" />
+    </div>
+    <div class="login-container cadastro-container">
+      <h1 class="title">Cadastrar-se</h1>
+
+      <form id="cadastroForm">
+        <label for="nome_completo">Nome Completo</label>
+        <input
+          type="text"
+          id="nome_completo"
+          required
+          placeholder="Digite seu nome completo"
+        />
+
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          required
+          placeholder="Digite seu e-mail"
+        />
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          required
+          placeholder="Cadastre sua senha"
+        />
+
+        <div class="button-group" style="margin-top: 30px">
+          <button type="submit" class="btn btn-entrar">Cadastrar</button>
+          {# <button type="button" class="btn btn-voltar">Voltar</button> #}
+          <a href='/' class="btn btn-voltar">Voltar</a>
+        </div>
+      </form>
+
+      <p id="mensagem"></p>
+    </div>
+    <script type="module" src="../../firebase/cadastro.js"></script>
+  </body>
+</html>
