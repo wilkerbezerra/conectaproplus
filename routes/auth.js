@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const courses = require("../data/courses")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,8 +14,11 @@ router.get('/cadastro', function(req, res, next) {
 });
 
 router.get('/portal', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
-  res.render('index');
+
+  res.render('layouts/portal', {
+    courses
+  });
+
 });
 
 router.get('/logout', (req, res) => {

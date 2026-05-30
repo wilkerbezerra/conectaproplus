@@ -2,8 +2,10 @@ module.exports = [
   {
     slug: "espetinho",
     name: "Curso de Espetinho",
-    stylesheet:
-      "/stylesheets/cursos/style.css",
+    shortName: "Espetinho",
+    image: "/images/cursos/espetinho/espetinho.png",
+    firstLesson: "/cursos/espetinho/aula/01",
+    stylesheet: "/stylesheets/cursos/style.css",
 
     lessons: [
   {

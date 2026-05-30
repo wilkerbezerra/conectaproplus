@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portal | CONECTAPRO+</title>
+
+  <link rel="stylesheet"
+        href="/stylesheets/portal/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="header-content">
+
+    <div class="header-left">
+      <i class="fas fa-bars menu-icon"></i>
+
+      <div class="logo">
+        CONECTAPRO<span class="plus">+</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+
+      <i
+        class="fas fa-user-circle profile-icon"
+        onclick="toggleLogoutMenu()">
+      </i>
+
+      <div
+        id="logout-menu"
+        onclick="window.location.href='/logout'">
+
+        Deslogar
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+<main class="main-content">
+
+  <section class="highlight-section">
+
+    <h2>Nossos Cursos</h2>
+
+    <div class="cards-container courses">
+
+      {% for course in courses %}
+
+      <a href="{{ course.firstLesson }}">
+
+        <div
+          class="course-card"
+
+          style="
+            background-image:
+            url('{{ course.image }}');
+            background-size: cover;
+            background-position: center;
+          ">
+
+          <div class="card-footer course-footer">
+            {{ course.shortName }}
+          </div>
+
+        </div>
+
+      </a>
+
+      {% endfor %}
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="main-footer">
+
+  <div class="footer-content">
+
+    <div class="logo">
+      CONECTAPRO<span class="plus">+</span>
+    </div>
+
+    <p class="footer-bottom">
+      &copy; 2026 CONECTAPRO+.
+      Capacitando talentos.
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function toggleLogoutMenu() {
+
+  const menu =
+    document.getElementById("logout-menu");
+
+  if (menu.style.display === "block") {
+
+    menu.style.display = "none";
+
+  } else {
+
+    menu.style.display = "block";
+
+  }
+
+}
+
+document.addEventListener("click", function(event) {
+
+  const menu =
+    document.getElementById("logout-menu");
+
+  const avatar =
+    document.querySelector(".profile-icon");
+
+  if (
+    !avatar.contains(event.target) &&
+    !menu.contains(event.target)
+  ) {
+
+    menu.style.display = "none";
+
+  }
+
+});
+
+</script>
+</body>
+</html>
