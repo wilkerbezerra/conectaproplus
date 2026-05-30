@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ courseName }} - Aula {{ lessonNumber }}</title>
+
+  <link rel="stylesheet" href="{{ stylesheet }}">
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo">
+      <a href="/portal">
+        CONECTAPRO<span>+</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="main-container">
+
+  <section class="content-area">
+
+    <h1 class="course-title">
+      {{ courseName }} - Aula {{ lessonNumber }}
+    </h1>
+
+    {% if lessonTitle %}
+      <h2 class="lesson-title">
+        {{ lessonTitle }}
+      </h2>
+    {% endif %}
+
+    <div class="video-player">
+      <iframe
+        id="youtube-player"
+        src="{{ videoUrl }}"
+        title="Video Aula"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="lesson-info">
+
+      {% block lessonContent %}
+      {% endblock %}
+
+      <div class="completion-checklist">
+
+        <div class="checkbox-wrapper">
+          <input
+            type="checkbox"
+            id="lessonCheck">
+        </div>
+
+        <label
+          for="lessonCheck"
+          class="checkbox-label">
+
+          Marcar aula como concluída
+
+        </label>
+
+        <span
+          class="status-msg"
+          id="statusMsg">
+
+          Pendente
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <aside class="sidebar">
+
+    {% for lesson in lessons %}
+
+      <div class="module-item">
+
+        <a href="{{ lesson.url }}">
+          <span>
+            Aula {{ lesson.number }}
+          </span>
+        </a>
+
+      </div>
+
+    {% endfor %}
+
+  </aside>
+
+</div>
+
+<footer class="main-footer">
+
+  <div class="footer-content">
+
+    <div class="logo">
+      <a href="/portal">
+        CONECTAPRO<span>+</span>
+      </a>
+    </div>
+
+    <p class="footer-bottom">
+      &copy; 2026 CONECTAPRO+.
+      Capacitando talentos.
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+const checkbox =
+  document.getElementById("lessonCheck");
+
+const statusMsg =
+  document.getElementById("statusMsg");
+
+const lessonKey =
+  "lesson_completed_" +
+  window.location.pathname;
+
+function updateStatus() {
+
+  statusMsg.textContent =
+    checkbox.checked
+      ? "Concluída"
+      : "Pendente";
+
+}
+
+window.addEventListener("load", () => {
+
+  const saved =
+    localStorage.getItem(lessonKey);
+
+  checkbox.checked =
+    saved === "true";
+
+  updateStatus();
+
+});
+
+checkbox.addEventListener("change", () => {
+
+  localStorage.setItem(
+    lessonKey,
+    checkbox.checked
+  );
+
+  updateStatus();
+
+});
+
+</script>
+
+</body>
+</html>

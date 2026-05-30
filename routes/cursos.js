@@ -1,33 +1,43 @@
 var express = require('express');
 var router = express.Router();
+const courses = require('../data/courses.js')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
 //Rotas do curso de espetinho
 
-router.get('/cursos/espetinho/aula/01', (req, res) => {
-  res.render('cursos/espetinho/aula/01/index');
+router.get('/cursos/espetinho/aula/:numero', (req, res) => {
+
+  const numero = req.params.numero;
+
+  const course = courses.find(
+    c => c.slug === 'espetinho'
+  );
+
+  if (!course) {
+    return res.status(404).send('Curso não encontrado');
+  }
+
+  const lesson = course.lessons.find(
+    l => l.number === numero
+  );
+
+  if (!lesson) {
+    return res.status(404).send('Aula não encontrada');
+  }
+
+  res.render('layouts/course-lesson', {
+  courseName: course.name,
+  lessonNumber: lesson.number,
+  lessonTitle: lesson.title,
+  videoUrl: lesson.videoUrl,
+  stylesheet: course.stylesheet,
+  lessons: course.lessons
 });
 
-router.get('/cursos/espetinho/aula/02', (req, res) => {
-  res.render('cursos/espetinho/aula/02/index');
 });
-
-router.get('/cursos/espetinho/aula/03', (req, res) => {
-  res.render('cursos/espetinho/aula/03/index');
-});
-
-router.get('/cursos/espetinho/aula/04', (req, res) => {
-  res.render('cursos/espetinho/aula/04/index');
-});
-
-router.get('/cursos/espetinho/aula/05', (req, res) => {
-  res.render('cursos/espetinho/aula/05/index');
-});
-
 
 module.exports = router;

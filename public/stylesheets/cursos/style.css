@@ -118,7 +118,13 @@ h1.course-title {
   color: #1a1f71;
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 15px;
+
+  text-align: center;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  width: 100%;
 }
 
 .completion-checklist {

@@ -22,15 +22,11 @@ nunjucks.configure(path.join(__dirname,"views"),{autoescape: true, express: app}
 app.set("view engine", "njk")
 
 
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', auth);
-app.use('/', cursos);
 
 app.use(session({
   secret: 'teste sessoes',
@@ -40,6 +36,11 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use('/', auth);
+app.use('/', cursos);
+
+
 
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
