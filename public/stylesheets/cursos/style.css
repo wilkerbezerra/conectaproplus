@@ -332,3 +332,58 @@ a {
 .completion-checklist.completed .checkbox-wrapper input[type="checkbox"] {
   accent-color: #009cb4;
 }
+
+/* =========================
+   Correção Menu Logout
+========================= */
+
+#logout-menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+
+  width: 120px;
+
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  z-index: 99999;
+}
+
+#logout-menu a,
+#logout-menu a:visited,
+#logout-menu a:hover,
+#logout-menu a:active {
+  display: block;
+
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  color: #333333 !important;
+
+  background: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+#logout-menu a:hover {
+  background-color: #f2f2f2 !important;
+}
+
+.user-avatar {
+  cursor: pointer;
+}

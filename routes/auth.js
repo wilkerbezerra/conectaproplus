@@ -17,4 +17,14 @@ router.get('/portal', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/logout', (req, res) => {
+
+  req.session.destroy(() => {
+
+    res.redirect('/');
+
+  });
+
+});
+
 module.exports = router;

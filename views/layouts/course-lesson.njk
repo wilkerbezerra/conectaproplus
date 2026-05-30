@@ -7,18 +7,38 @@
   <title>{{ courseName }} - Aula {{ lessonNumber }}</title>
 
   <link rel="stylesheet" href="{{ stylesheet }}">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 </head>
 
 <body>
 
 <header>
+
   <div class="header-left">
+
     <div class="logo">
       <a href="/portal">
         CONECTAPRO<span>+</span>
       </a>
     </div>
+
   </div>
+
+  <div class="header-right">
+
+    <div class="user-avatar" id="user-avatar">
+  <i class="fas fa-user-circle"></i>
+</div>
+
+    <div id="logout-menu">
+      <a href="/logout">Deslogar</a>
+    </div>
+
+  </div>
+
 </header>
 
 <div class="main-container">
@@ -179,6 +199,45 @@ checkbox.addEventListener("change", () => {
   );
 
   updateStatus();
+
+});
+
+</script>
+
+<script>
+
+const avatar =
+  document.getElementById('user-avatar');
+
+const logoutMenu =
+  document.getElementById('logout-menu');
+
+avatar.addEventListener('click', () => {
+
+  if (
+    logoutMenu.style.display === 'block'
+  ) {
+
+    logoutMenu.style.display = 'none';
+
+  } else {
+
+    logoutMenu.style.display = 'block';
+
+  }
+
+});
+
+document.addEventListener('click', (event) => {
+
+  if (
+    !avatar.contains(event.target) &&
+    !logoutMenu.contains(event.target)
+  ) {
+
+    logoutMenu.style.display = 'none';
+
+  }
 
 });
 
