@@ -284,5 +284,54 @@ module.exports = [
     url: "/cursos/informatica/aula/12"
   }
 ]
+  },
+  {
+    slug: "saladeiro-profissional",
+    name: "Curso de Saladeiro Profissional",
+    shortName: "Saladeiro Profissional",
+    image: "/images/cursos/saladeiro-profissional/salada.jpg",
+    firstLesson: "/cursos/saladeiro-profissional/aula/01",
+    stylesheet: "/stylesheets/cursos/style.css",
+
+    lessons: [
+  {
+    number: "01",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/b42LuvVw8_c?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/01"
+  },
+
+  {
+    number: "02",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/OmKxOniE63g?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/02"
+  },
+
+  {
+    number: "03",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/QV_36AcWUZE?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/03"
+  },
+  {
+    number: "04",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/xTvkUWcuX7U?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/04"
+  },
+  {
+    number: "05",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/T0Plg2pnvlY?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/05"
+  },
+  {
+    number: "06",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/Ch6Wx4PNVi4?enablejsapi=1",
+    url: "/cursos/saladeiro-profissional/aula/06"
+  }
+]
   }
 ]
