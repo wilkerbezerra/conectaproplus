@@ -290,3 +290,45 @@ a {
     padding: 12px 15px;
   }
 }
+
+/* =========================
+   Aula concluída
+========================= */
+
+.completion-checklist {
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-left: 5px solid #009cb4;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.completion-checklist.completed {
+  background-color: #dfe8dd;
+  border-left: 5px solid #57b957;
+}
+
+.checkbox-label.completed {
+  text-decoration: line-through;
+  color: #555;
+}
+
+.status-msg.completed {
+  color: #0c7b0c;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.completion-checklist.completed .status-msg {
+  color: #0c7b0c;
+  font-weight: 700;
+}
+
+.completion-checklist.completed .checkbox-wrapper input[type="checkbox"] {
+  accent-color: #009cb4;
+}

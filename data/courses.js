@@ -8,23 +8,35 @@ module.exports = [
     lessons: [
   {
     number: "01",
-    title: "Introdução",
-    videoUrl: "https://www.youtube.com/embed/4XiEHjjmD9o",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/4XiEHjjmD9o?enablejsapi=1",
     url: "/cursos/espetinho/aula/01"
   },
 
   {
     number: "02",
-    title: "Escolha dos ingredientes",
-    videoUrl: "https://www.youtube.com/embed/xxxxx",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/cweY7XPrh6k?enablejsapi=1",
     url: "/cursos/espetinho/aula/02"
   },
 
   {
     number: "03",
-    title: "Precificação",
-    videoUrl: "https://www.youtube.com/embed/yyyyy",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/A4eWH_-vDjo?enablejsapi=1",
     url: "/cursos/espetinho/aula/03"
+  },
+  {
+    number: "04",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/Qx0DBSzbxV4?enablejsapi=1",
+    url: "/cursos/espetinho/aula/04"
+  },
+  {
+    number: "05",
+    title: "",
+    videoUrl: "https://www.youtube.com/embed/uhLRxmSJSzY?enablejsapi=1",
+    url: "/cursos/espetinho/aula/05"
   }
 ]
   }

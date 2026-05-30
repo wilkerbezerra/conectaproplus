@@ -121,7 +121,6 @@
 </footer>
 
 <script>
-
 const checkbox =
   document.getElementById("lessonCheck");
 
@@ -132,12 +131,31 @@ const lessonKey =
   "lesson_completed_" +
   window.location.pathname;
 
+const checklist =
+  document.querySelector(".completion-checklist");
+
+const label =
+  document.querySelector(".checkbox-label");
+
 function updateStatus() {
 
-  statusMsg.textContent =
-    checkbox.checked
-      ? "Concluída"
-      : "Pendente";
+  if (checkbox.checked) {
+
+    statusMsg.textContent = "Concluído!";
+
+    checklist.classList.add("completed");
+    label.classList.add("completed");
+    statusMsg.classList.add("completed");
+
+  } else {
+
+    statusMsg.textContent = "Pendente";
+
+    checklist.classList.remove("completed");
+    label.classList.remove("completed");
+    statusMsg.classList.remove("completed");
+
+  }
 
 }
 
