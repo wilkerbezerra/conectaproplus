@@ -1,3 +1,4 @@
+const connectDatabase = require('./config/database')
 var createError = require('http-errors');
 var express = require('express');
 var nunjucks = require('nunjucks')
@@ -10,6 +11,8 @@ var auth = require('./routes/auth');
 var cursos = require('./routes/cursos');
 
 var app = express();
+
+connectDatabase()
 
 var session = require('express-session')
 var passport = require('passport')

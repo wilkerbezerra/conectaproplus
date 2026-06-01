@@ -13,11 +13,12 @@
     <div class="login-container cadastro-container">
       <h1 class="title">Cadastrar-se</h1>
 
-      <form id="cadastroForm">
+      <form id="cadastroForm" action="/cadastro" method="POST">
         <label for="nome_completo">Nome Completo</label>
         <input
           type="text"
           id="nome_completo"
+          name="fullName"
           required
           placeholder="Digite seu nome completo"
         />
@@ -26,6 +27,7 @@
         <input
           type="email"
           id="email"
+          name="email"
           required
           placeholder="Digite seu e-mail"
         />
@@ -33,6 +35,7 @@
         <input
           type="password"
           id="senha"
+          name="password"
           required
           placeholder="Cadastre sua senha"
         />
@@ -46,6 +49,5 @@
 
       <p id="mensagem"></p>
     </div>
-    <script type="module" src="../../firebase/cadastro.js"></script>
   </body>
 </html>
