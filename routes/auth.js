@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const courses = require("../data/courses")
 const User = require('../models/user')
+const bcrypt = require('bcrypt');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -53,13 +54,14 @@ router.post('/cadastro', async (req, res) => {
 
     }
 
-    await User.create({
+    const hashedPassword =
+  await bcrypt.hash(password, 10);
 
-      fullName,
-      email,
-      password
-
-    });
+await User.create({
+  fullName,
+  email,
+  password: hashedPassword
+});
 
     res.redirect('/');
 
@@ -75,7 +77,12 @@ router.post('/cadastro', async (req, res) => {
 
 });
 
+
 router.post('/', async (req, res) => {
+
+  try {
+
+  
 
   const {
     email,
@@ -83,20 +90,31 @@ router.post('/', async (req, res) => {
   } = req.body;
 
   const user =
-    await User.findOne({
+  await User.findOne({
+    email
+  });
 
-      email,
-      password
+if (!user) {
 
-    });
+  return res.send(
+    'Email ou senha inválidos'
+  );
 
-  if (!user) {
+}
 
-    return res.send(
-      'Email ou senha inválidos'
-    );
+const isValidPassword =
+  await bcrypt.compare(
+    password,
+    user.password
+  );
 
-  }
+if (!isValidPassword) {
+
+  return res.send(
+    'Email ou senha inválidos'
+  );
+
+}
 
   req.session.user = {
 
@@ -106,7 +124,15 @@ router.post('/', async (req, res) => {
   };
 
   res.redirect('/portal');
+} catch (error) {
 
+    console.error(error);
+
+    res.status(500).send(
+      'Erro interno do servidor'
+    );
+
+  }
 });
 
 module.exports = router;
