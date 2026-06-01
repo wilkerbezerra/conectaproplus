@@ -6,24 +6,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override')
-
 var auth = require('./routes/auth');
 var cursos = require('./routes/cursos');
-
 var app = express();
 
 connectDatabase()
 
 var session = require('express-session')
-var passport = require('passport')
-require('./passport')
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 nunjucks.configure(path.join(__dirname,"views"),{autoescape: true, express: app})
 app.set("view engine", "njk")
-
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,13 +29,8 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use(passport.initialize())
-app.use(passport.session())
-
 app.use('/', auth);
 app.use('/', cursos);
-
-
 
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {

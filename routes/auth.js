@@ -3,19 +3,18 @@ var router = express.Router();
 const courses = require("../data/courses")
 const User = require('../models/user')
 const bcrypt = require('bcrypt');
+const isAuthenticated =
+  require('../middleware/auth');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
   res.render('auth/login');
 });
 
 router.get('/cadastro', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
   res.render('auth/cadastro');
 });
 
-router.get('/portal', function(req, res, next) {
+router.get('/portal',isAuthenticated, function(req, res, next) {
 
   res.render('layouts/portal', {
     courses
@@ -76,7 +75,6 @@ await User.create({
   }
 
 });
-
 
 router.post('/', async (req, res) => {
 

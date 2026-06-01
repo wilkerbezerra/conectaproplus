@@ -1,15 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const courses = require('../data/courses.js')
+const isAuthenticated =
+  require('../middleware/auth');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-//Rotas do curso de espetinho
-
-router.get('/cursos/espetinho/aula/:numero', (req, res) => {
+router.get('/cursos/espetinho/aula/:numero',isAuthenticated, (req, res) => {
 
   const numero = req.params.numero;
 
@@ -40,8 +35,7 @@ router.get('/cursos/espetinho/aula/:numero', (req, res) => {
 
 });
 
-
-router.get('/cursos/geladinho-gourmet/aula/:numero', (req, res) => {
+router.get('/cursos/geladinho-gourmet/aula/:numero', isAuthenticated,(req, res) => {
 
   const numero = req.params.numero;
 
@@ -72,11 +66,9 @@ router.get('/cursos/geladinho-gourmet/aula/:numero', (req, res) => {
 
 });
 
-
-router.get('/cursos/comunicacao-e-oratoria/aula/:numero', (req, res) => {
+router.get('/cursos/comunicacao-e-oratoria/aula/:numero',isAuthenticated, (req, res) => {
 
   const numero = req.params.numero;
-
   const course = courses.find(
     c => c.slug === 'comunicacao-e-oratoria'
   );
@@ -104,7 +96,7 @@ router.get('/cursos/comunicacao-e-oratoria/aula/:numero', (req, res) => {
 
 });
 
-router.get('/cursos/informatica/aula/:numero', (req, res) => {
+router.get('/cursos/informatica/aula/:numero', isAuthenticated, (req, res) => {
 
   const numero = req.params.numero;
 
@@ -135,8 +127,7 @@ router.get('/cursos/informatica/aula/:numero', (req, res) => {
 
 });
 
-
-router.get('/cursos/saladeiro-profissional/aula/:numero', (req, res) => {
+router.get('/cursos/saladeiro-profissional/aula/:numero',isAuthenticated, (req, res) => {
 
   const numero = req.params.numero;
 
