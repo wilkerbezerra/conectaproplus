@@ -2,7 +2,7 @@
 
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
-const courses = require('../data/courses');
+const Course = require('../models/course');
 
 exports.showLogin = (req, res) => {
 
@@ -16,11 +16,29 @@ exports.showRegister = (req, res) => {
 
 };
 
-exports.showPortal = (req, res) => {
+exports.showPortal = async (req, res) => {
 
-  res.render('layouts/portal', {
-    courses
-  });
+  try {
+
+    const courses =
+      await Course.find();
+
+    res.render(
+      'layouts/portal',
+      {
+        courses
+      }
+    );
+
+  } catch (error) {
+
+    console.error(error);
+
+    res.status(500).send(
+      'Erro ao carregar cursos'
+    );
+
+  }
 
 };
 
@@ -45,7 +63,9 @@ exports.register = async (req, res) => {
     } = req.body;
 
     const existingUser =
-      await User.findOne({ email });
+      await User.findOne({
+        email
+      });
 
     if (existingUser) {
 
@@ -56,7 +76,10 @@ exports.register = async (req, res) => {
     }
 
     const hashedPassword =
-      await bcrypt.hash(password, 10);
+      await bcrypt.hash(
+        password,
+        10
+      );
 
     await User.create({
 

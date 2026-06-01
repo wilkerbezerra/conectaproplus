@@ -1,66 +1,79 @@
+// controllers/courseController.js
 
-const courses =
-  require('../data/courses');
+const Course =
+  require('../models/course');
 
 exports.showLesson =
-  (req, res) => {
+  async (req, res) => {
 
-    const {
-      slug,
-      numero
-    } = req.params;
+    try {
 
-    const course =
-      courses.find(
-        c => c.slug === slug
-      );
+      const {
+        slug,
+        numero
+      } = req.params;
 
-    if (!course) {
+      const course =
+        await Course.findOne({
+          slug
+        });
 
-      return res
-        .status(404)
-        .send(
-          'Curso não encontrado'
-        );
+      if (!course) {
 
-    }
+        return res
+          .status(404)
+          .send(
+            'Curso não encontrado'
+          );
 
-    const lesson =
-      course.lessons.find(
-        l => l.number === numero
-      );
-
-    if (!lesson) {
-
-      return res
-        .status(404)
-        .send(
-          'Aula não encontrada'
-        );
-
-    }
-
-    res.render(
-      'layouts/course-lesson',
-      {
-        courseName:
-          course.name,
-
-        lessonNumber:
-          lesson.number,
-
-        lessonTitle:
-          lesson.title,
-
-        videoUrl:
-          lesson.videoUrl,
-
-        stylesheet:
-          course.stylesheet,
-
-        lessons:
-          course.lessons
       }
-    );
+
+      const lesson =
+        course.lessons.find(
+          l => l.number === numero
+        );
+
+      if (!lesson) {
+
+        return res
+          .status(404)
+          .send(
+            'Aula não encontrada'
+          );
+
+      }
+
+      res.render(
+        'layouts/course-lesson',
+        {
+          courseName:
+            course.name,
+
+          lessonNumber:
+            lesson.number,
+
+          lessonTitle:
+            lesson.title,
+
+          videoUrl:
+            lesson.videoUrl,
+
+          stylesheet:
+            course.stylesheet,
+
+          lessons:
+            course.lessons
+        }
+      );
+
+    } catch (error) {
+
+      console.error(error);
+
+      res.status(500).send(
+        'Erro ao carregar aula'
+      );
+
+    }
 
   };
