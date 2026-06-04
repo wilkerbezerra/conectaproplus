@@ -1,7 +1,26 @@
 // controllers/courseController.js
 
-const Course =
-  require('../models/course');
+const Course = require('../models/course');
+
+async function getCourseBySlug(slug) {
+
+  const course =
+    await Course.findOne({
+      slug
+    });
+
+  if (!course) {
+
+    throw new Error(
+      'Curso não encontrado'
+    );
+
+  }
+
+  return course;
+
+}
+
 
 exports.showLesson =
   async (req, res) => {
@@ -14,9 +33,7 @@ exports.showLesson =
       } = req.params;
 
       const course =
-        await Course.findOne({
-          slug
-        });
+        await getCourseBySlug(slug);
 
       if (!course) {
 
