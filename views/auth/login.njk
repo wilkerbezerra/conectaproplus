@@ -7,43 +7,44 @@
     <link rel="stylesheet" href="/stylesheets/login/style.css" />
   </head>
   <body>
-    <div class="logo">
-      <img src="/images/logo.png" alt="logo" />
-    </div>
-
-    <div class="login-container">
-      <h1 class="title">Login</h1>
-
-      <div class="user-icon-container">
-        <i class="fas fa-user"></i>
+    <main>
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo" />
       </div>
 
-      <form id="loginForm" action="/" method="POST">
-        <label for="email">Seu e-mail</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          required
-          placeholder="Digite seu e-mail"
-        />
+      <div class="login-container">
+        <h1 class="title">Login</h1>
 
-        <label for="senha">Sua senha</label>
-        <input
-          type="password"
-          id="senha"
-          name="password"
-          required
-          placeholder="Digite sua senha"
-        />
-        <div class="button-group">
-          <button type="submit" class="btn btn-entrar">Entrar</button>
+        <div class="user-icon-container">
+          <i class="fas fa-user"></i>
         </div>
-        <a href="/cadastro" class="link-cadastro"
-          > Cadastrar-se
-        </a>
-      </form>
-    </div>
 
+        <form id="loginForm" action="/" method="POST">
+          <label for="email">Seu e-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="Digite seu e-mail"
+          />
+
+          <label for="senha">Sua senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="password"
+            required
+            placeholder="Digite sua senha"
+          />
+          <div class="button-group">
+            <button type="submit" class="btn btn-entrar">Entrar</button>
+          </div>
+          <a href="/cadastro" class="link-cadastro"
+            > Cadastrar-se
+          </a>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

@@ -7,47 +7,49 @@
     <link rel="stylesheet" href="/stylesheets/cadastro/style.css" />
   </head>
   <body>
-    <div class="logo">
-       <img src="/images/logo.png" alt="logo" />
-    </div>
-    <div class="login-container cadastro-container">
-      <h1 class="title">Cadastrar-se</h1>
+    <main>
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo" />
+      </div>
+      <div class="login-container cadastro-container">
+        <h1 class="title">Cadastrar-se</h1>
 
-      <form id="cadastroForm" action="/cadastro" method="POST">
-        <label for="nome_completo">Nome Completo</label>
-        <input
-          type="text"
-          id="nome_completo"
-          name="fullName"
-          required
-          placeholder="Digite seu nome completo"
-        />
+        <form id="cadastroForm" action="/cadastro" method="POST">
+          <label for="nome_completo">Nome Completo</label>
+          <input
+            type="text"
+            id="nome_completo"
+            name="fullName"
+            required
+            placeholder="Digite seu nome completo"
+          />
 
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          placeholder="Digite seu e-mail"
-        />
-        <label for="senha">Senha</label>
-        <input
-          type="password"
-          id="senha"
-          name="password"
-          required
-          placeholder="Cadastre sua senha"
-        />
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Digite seu e-mail"
+          />
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="password"
+            required
+            placeholder="Cadastre sua senha"
+          />
 
-        <div class="button-group" style="margin-top: 30px">
-          <button type="submit" class="btn btn-entrar">Cadastrar</button>
-          {# <button type="button" class="btn btn-voltar">Voltar</button> #}
-          <a href='/' class="btn btn-voltar">Voltar</a>
-        </div>
-      </form>
+          <div class="button-group" style="margin-top: 30px">
+            <button type="submit" class="btn btn-entrar">Cadastrar</button>
+            {# <button type="button" class="btn btn-voltar">Voltar</button> #}
+            <a href='/' class="btn btn-voltar">Voltar</a>
+          </div>
+        </form>
 
-      <p id="mensagem"></p>
-    </div>
+        <p id="mensagem"></p>
+      </div>
+    </main>
   </body>
 </html>

@@ -154,13 +154,14 @@ h1.course-title {
 .status-msg {
   margin-left: auto;
   font-size: 0.9rem;
-  color: #666;
+  color: #333;
+  font-weight: 600;
   font-style: italic;
 }
 
 .sidebar {
   width: 300px;
-  background-color: #009cb4;
+  background-color: #007a8c;
   color: white;
   overflow-y: auto;
 }
