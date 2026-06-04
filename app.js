@@ -1,3 +1,4 @@
+require('dotenv').config();
 const connectDatabase = require('./config/database')
 var createError = require('http-errors');
 var express = require('express');
@@ -24,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'teste sessoes',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
 }))
