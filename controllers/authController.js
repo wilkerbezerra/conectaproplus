@@ -3,6 +3,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const Course = require('../models/course');
+const messages = require('../config/messages');
 
 exports.showLogin = (req, res) => {
 
@@ -70,7 +71,7 @@ exports.register = async (req, res) => {
     if (existingUser) {
 
       return res.send(
-        'Email já cadastrado'
+        messages.EMAIL_ALREADY_EXISTS
       );
 
     }
@@ -96,7 +97,7 @@ exports.register = async (req, res) => {
     console.error(error);
 
     res.send(
-      'Erro ao cadastrar usuário'
+      messages.REGISTER_ERROR
     );
 
   }
@@ -120,7 +121,7 @@ exports.login = async (req, res) => {
     if (!user) {
 
       return res.send(
-        'Email ou senha inválidos'
+        messages.INVALID_CREDENTIALS
       );
 
     }
@@ -134,7 +135,7 @@ exports.login = async (req, res) => {
     if (!isValidPassword) {
 
       return res.send(
-        'Email ou senha inválidos'
+        messages.INVALID_CREDENTIALS
       );
 
     }
@@ -153,7 +154,7 @@ exports.login = async (req, res) => {
     console.error(error);
 
     res.send(
-      'Erro ao realizar login'
+      messages.LOGIN_ERROR
     );
 
   }
