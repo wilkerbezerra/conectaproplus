@@ -11,7 +11,6 @@ O ConectaPro+ foi desenvolvido utilizando as seguintes tecnologias:
 * Node.js
 * Express.js
 * MongoDB Atlas
-* Docker
 * GitHub
 * GitHub Actions
 * Render
@@ -20,14 +19,13 @@ O ConectaPro+ foi desenvolvido utilizando as seguintes tecnologias:
 
 A estratégia de deploy adotada utiliza serviços em nuvem para hospedagem da aplicação e do banco de dados.
 
-| Componente                  | Solução Utilizada |
-| --------------------------- | ----------------- |
-| Controle de Versão          | GitHub            |
-| Integração Contínua         | GitHub Actions    |
-| Aplicação Web               | Node.js + Express |
-| Hospedagem da Aplicação     | Render            |
-| Banco de Dados              | MongoDB Atlas     |
-| Ambiente de Desenvolvimento | Docker            |
+| Componente              | Solução Utilizada |
+| ----------------------- | ----------------- |
+| Controle de Versão      | GitHub            |
+| Integração Contínua     | GitHub Actions    |
+| Aplicação Web           | Node.js + Express |
+| Hospedagem da Aplicação | Render            |
+| Banco de Dados          | MongoDB Atlas     |
 
 ### Arquitetura Final
 
@@ -58,11 +56,15 @@ O GitHub foi utilizado para controle de versão, colaboração entre os integran
 
 O GitHub Actions foi adotado para automatizar a execução dos testes, garantindo que alterações sejam verificadas antes de serem integradas ao projeto.
 
-O Docker foi utilizado durante o desenvolvimento para disponibilizar um ambiente local padronizado e facilitar a execução do banco de dados MongoDB, reduzindo problemas de configuração entre diferentes ambientes.
-
 O MongoDB Atlas foi adotado como solução de banco de dados em nuvem, eliminando a dependência de infraestrutura local, simplificando a administração do banco de dados e aumentando a disponibilidade das informações armazenadas.
 
 O Render foi escolhido para hospedagem da aplicação por oferecer integração simples com GitHub, deploy automatizado, suporte nativo para aplicações Node.js e facilidade de configuração para projetos acadêmicos.
+
+### Observação sobre o Ambiente de Desenvolvimento
+
+Durante o desenvolvimento local do projeto, o MongoDB foi executado em um container Docker para facilitar a configuração do ambiente e garantir maior padronização entre as máquinas utilizadas pela equipe.
+
+Posteriormente, para viabilizar a implantação em nuvem, o banco de dados foi migrado para o MongoDB Atlas, passando a integrar a arquitetura final de produção.
 
 ## Benefícios da Estratégia
 
