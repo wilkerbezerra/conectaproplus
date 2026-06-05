@@ -4,8 +4,7 @@ const Course = require('../models/course');
 
 async function getCourseBySlug(slug) {
 
-  const course =
-    await Course.findOne({
+  const course = await Course.findOne({
       slug
     });
 
@@ -18,9 +17,9 @@ async function getCourseBySlug(slug) {
   }
 
   return course;
-
 }
 
+exports.getCourseBySlug = getCourseBySlug;
 
 exports.showLesson =
   async (req, res) => {
