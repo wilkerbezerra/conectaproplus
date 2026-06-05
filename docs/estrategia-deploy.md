@@ -20,14 +20,14 @@ O ConectaPro+ foi desenvolvido utilizando as seguintes tecnologias:
 
 A estratégia de deploy adotada utiliza serviços em nuvem para hospedagem da aplicação e do banco de dados.
 
-| Componente                        | Solução Utilizada |
-| --------------------------------- | ----------------- |
-| Controle de Versão                | GitHub            |
-| Integração Contínua               | GitHub Actions    |
-| Aplicação Web                     | Node.js + Express |
-| Hospedagem da Aplicação           | Render            |
-| Banco de Dados                    | MongoDB Atlas     |
-| Containerização (Desenvolvimento) | Docker            |
+| Componente                  | Solução Utilizada |
+| --------------------------- | ----------------- |
+| Controle de Versão          | GitHub            |
+| Integração Contínua         | GitHub Actions    |
+| Aplicação Web               | Node.js + Express |
+| Hospedagem da Aplicação     | Render            |
+| Banco de Dados              | MongoDB Atlas     |
+| Ambiente de Desenvolvimento | Docker            |
 
 ### Arquitetura Final
 
@@ -50,7 +50,7 @@ MongoDB Atlas
 5. Após a validação do pipeline, as alterações podem ser integradas à branch principal.
 6. O Render detecta automaticamente novas alterações na branch configurada.
 7. O serviço é reconstruído e publicado automaticamente.
-8. A aplicação conecta-se ao banco de dados MongoDB Atlas através de variáveis de ambiente.
+8. A aplicação conecta-se ao banco de dados MongoDB Atlas por meio de variáveis de ambiente configuradas na plataforma.
 
 ## Justificativa da Escolha
 
@@ -58,11 +58,11 @@ O GitHub foi utilizado para controle de versão, colaboração entre os integran
 
 O GitHub Actions foi adotado para automatizar a execução dos testes, garantindo que alterações sejam verificadas antes de serem integradas ao projeto.
 
-O Docker foi utilizado durante o desenvolvimento para disponibilizar um ambiente local padronizado e facilitar a execução do MongoDB.
+O Docker foi utilizado durante o desenvolvimento para disponibilizar um ambiente local padronizado e facilitar a execução do banco de dados MongoDB, reduzindo problemas de configuração entre diferentes ambientes.
 
-O MongoDB Atlas foi adotado como solução de banco de dados em nuvem, eliminando a dependência de infraestrutura local e aumentando a disponibilidade dos dados.
+O MongoDB Atlas foi adotado como solução de banco de dados em nuvem, eliminando a dependência de infraestrutura local, simplificando a administração do banco de dados e aumentando a disponibilidade das informações armazenadas.
 
-O Render foi escolhido para hospedagem da aplicação por oferecer integração simples com GitHub, deploy automatizado e suporte nativo para aplicações Node.js.
+O Render foi escolhido para hospedagem da aplicação por oferecer integração simples com GitHub, deploy automatizado, suporte nativo para aplicações Node.js e facilidade de configuração para projetos acadêmicos.
 
 ## Benefícios da Estratégia
 
@@ -76,7 +76,7 @@ O Render foi escolhido para hospedagem da aplicação por oferecer integração 
 
 ## Implantação Realizada
 
-Durante o desenvolvimento do ConectaPro+, a estratégia inicialmente planejada para implantação foi efetivamente executada.
+Durante o desenvolvimento do ConectaPro+, foi realizada a implantação da aplicação em ambiente de nuvem utilizando a plataforma Render e o banco de dados MongoDB Atlas.
 
 A aplicação foi publicada na plataforma Render utilizando a branch `desenvolvimento` do repositório GitHub do projeto.
 
@@ -89,10 +89,10 @@ Para a implantação foram configurados:
 
 Após a publicação, a aplicação recebeu uma URL pública, permitindo acesso externo ao sistema sem a necessidade de execução local.
 
-A implantação foi validada através de testes de autenticação, acesso ao portal de cursos e integração com o banco de dados em nuvem.
+A implantação foi validada por meio de testes de autenticação, acesso ao portal de cursos e integração com o banco de dados em nuvem, confirmando o correto funcionamento da aplicação em ambiente de produção.
 
 ## Conclusão
 
 A estratégia de deploy adotada permitiu a implantação completa do ConectaPro+ em ambiente de nuvem, utilizando Render para hospedagem da aplicação e MongoDB Atlas para persistência dos dados.
 
-A solução implantada demonstrou estabilidade durante os testes realizados, atendendo aos objetivos do projeto e aproximando a aplicação de um cenário real de produção.
+A solução implantada demonstrou estabilidade durante os testes realizados, atendendo aos objetivos do projeto e aproximando a aplicação de um cenário real de produção, alinhado às práticas modernas de desenvolvimento e entrega contínua de software.
