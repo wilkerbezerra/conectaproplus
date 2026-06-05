@@ -4,8 +4,6 @@
 
 Este documento apresenta as principais lições aprendidas durante o desenvolvimento e evolução do sistema ConectaPro+, abordando decisões técnicas adotadas, desafios enfrentados, aspectos relacionados à dinâmica da equipe, oportunidades de melhoria e recomendações para futuras versões do projeto.
 
----
-
 ## Decisões Técnicas Acertadas
 
 Ao longo do projeto, diversas decisões contribuíram para a melhoria da qualidade do sistema e para a evolução da aplicação.
@@ -36,8 +34,6 @@ A configuração do pipeline de Integração Contínua possibilitou a execução
 
 A utilização do Render para hospedagem da aplicação e do MongoDB Atlas para persistência dos dados permitiu disponibilizar o sistema em ambiente real de produção, aproximando o projeto das práticas utilizadas pelo mercado.
 
----
-
 ## Decisões que Poderiam Ter Sido Tomadas Mais Cedo
 
 Durante a execução do projeto foram identificadas algumas práticas que poderiam ter sido adotadas desde as fases iniciais.
@@ -57,8 +53,6 @@ A auditoria de acessibilidade revelou problemas que poderiam ter sido evitados c
 ### Monitoramento
 
 O planejamento do monitoramento foi realizado após a conclusão do sistema. Definir métricas e indicadores desde o início teria facilitado o acompanhamento da evolução do produto.
-
----
 
 ## Principais Desafios Enfrentados
 
@@ -84,8 +78,6 @@ A utilização de múltiplas branches exigiu atenção para evitar conflitos e g
 
 Problemas relacionados à navegação das páginas de aula, rolagem da interface e visualização do rodapé exigiram diversas validações e ajustes até atingir o comportamento esperado.
 
----
-
 ## Dinâmica da Equipe
 
 O desenvolvimento do projeto exigiu colaboração entre os integrantes da equipe para análise dos problemas identificados, definição das melhorias prioritárias e validação das soluções implementadas.
@@ -93,8 +85,6 @@ O desenvolvimento do projeto exigiu colaboração entre os integrantes da equipe
 A divisão das atividades permitiu que diferentes aspectos do projeto fossem trabalhados simultaneamente, incluindo acessibilidade, qualidade de código, usabilidade, testes, deploy e documentação.
 
 Além disso, a utilização do GitHub facilitou o compartilhamento das alterações realizadas e o acompanhamento da evolução do projeto ao longo do semestre.
-
----
 
 ## O Que Faríamos Diferente
 
@@ -116,8 +106,6 @@ A criação de testes automatizados desde o início contribuiria para maior esta
 
 A integração contínua poderia ter sido implementada nas primeiras etapas do projeto, permitindo validações automáticas desde as versões iniciais.
 
----
-
 ## Recomendações para Futuras Iterações
 
 O ConectaPro+ possui potencial para continuar evoluindo através da implementação de novas funcionalidades e melhorias.
@@ -134,8 +122,6 @@ Entre as principais recomendações estão:
 - Coleta de métricas reais de utilização;
 - Sistema de notificações para os usuários;
 - Melhorias contínuas de acessibilidade e usabilidade.
-
----
 
 ## Conclusão
 
