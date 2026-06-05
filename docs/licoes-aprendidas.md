@@ -78,14 +78,6 @@ A utilização de múltiplas branches exigiu atenção para evitar conflitos e g
 
 Problemas relacionados à navegação das páginas de aula, rolagem da interface e visualização do rodapé exigiram diversas validações e ajustes até atingir o comportamento esperado.
 
-## Dinâmica da Equipe
-
-O desenvolvimento do projeto exigiu colaboração entre os integrantes da equipe para análise dos problemas identificados, definição das melhorias prioritárias e validação das soluções implementadas.
-
-A divisão das atividades permitiu que diferentes aspectos do projeto fossem trabalhados simultaneamente, incluindo acessibilidade, qualidade de código, usabilidade, testes, deploy e documentação.
-
-Além disso, a utilização do GitHub facilitou o compartilhamento das alterações realizadas e o acompanhamento da evolução do projeto ao longo do semestre.
-
 ## O Que Faríamos Diferente
 
 Após a conclusão do projeto, algumas oportunidades de melhoria foram identificadas para projetos futuros.
