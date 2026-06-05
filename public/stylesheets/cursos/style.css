@@ -9,7 +9,7 @@ body {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -78,13 +78,12 @@ header {
 .main-container {
   display: flex;
   margin-top: 60px;
-  height: calc(100vh - 60px);
+  flex: 1;
 }
 
 .content-area {
   flex: 1;
   padding: 30px 50px;
-  overflow-y: auto;
 }
 
 h1.course-title {
@@ -150,7 +149,6 @@ h1.course-title {
   width: 300px;
   background-color: #007a8c;
   color: white;
-  overflow-y: auto;
 }
 
 .module-item {
@@ -338,4 +336,13 @@ a {
 
 .user-avatar {
   cursor: pointer;
+}
+
+.module-item.active {
+  background-color: #0b5f6b;
+  border-left: 4px solid #ffffff;
+}
+
+.module-item.active span {
+  font-weight: 700;
 }

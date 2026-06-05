@@ -105,17 +105,21 @@
 
     {% for lesson in lessons %}
 
-      <div class="module-item">
+  <div
+    class="module-item
+    {% if lesson.number == lessonNumber %}
+      active
+    {% endif %}">
 
-        <a href="{{ lesson.url }}">
-          <span>
-            Aula {{ lesson.number }}
-          </span>
-        </a>
+    <a href="{{ lesson.url }}">
+      <span>
+        Aula {{ lesson.number }}
+      </span>
+    </a>
 
-      </div>
+  </div>
 
-    {% endfor %}
+{% endfor %}
 
   </aside>
 
